@@ -2,36 +2,44 @@
 using namespace std;
 
 int main() {
-    int n1, n2;
-    cin >> n1 >> n2;
+    int n, m;
 
-    int a[100], b[100], c[200];
+    cin >> n;
+    int a[n];
 
-    for (int i = 0; i < n1; i++)
+    for (int i = 0; i < n; i++)
         cin >> a[i];
 
-    for (int i = 0; i < n2; i++)
+    cin >> m;
+    int b[m];
+
+    for (int i = 0; i < m; i++)
         cin >> b[i];
 
-    int i = 0, j = 0, k = 0;
-
-    while (i < n1 && j < n2) {
-        if (a[i] < b[j])
-            c[k++] = a[i++];
-        else
-            c[k++] = b[j++];
-    }
-
-    while (i < n1)
-        c[k++] = a[i++];
-
-    while (j < n2)
-        c[k++] = b[j++];
+    int i = 0, j = 0;
 
     cout << "Merged Array: ";
 
-    for (int x = 0; x < k; x++)
-        cout << c[x] << " ";
+    while (i < n && j < m) {
+        if (a[i] < b[j]) {
+            cout << a[i] << " ";
+            i++;
+        }
+        else {
+            cout << b[j] << " ";
+            j++;
+        }
+    }
+
+    while (i < n) {
+        cout << a[i] << " ";
+        i++;
+    }
+
+    while (j < m) {
+        cout << b[j] << " ";
+        j++;
+    }
 
     return 0;
 }
