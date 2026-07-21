@@ -5,16 +5,17 @@ int main() {
     int n;
     cin >> n;
 
-    int octal = 0, place = 1;
+    int octal = 0;
+    int place = 1;
 
     while (n > 0) {
-        int rem = n % 8;
-        octal += rem * place;
-        place *= 10;
-        n /= 8;
+        int remainder = n % 8;
+        octal = octal + remainder * place;
+        n = n / 8;
+        place = place * 10;
     }
 
-    cout << "Octal = " << octal;
+    cout << "Octal Number: " << octal;
 
     return 0;
 }
