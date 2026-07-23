@@ -6,6 +6,7 @@ int main() {
     cin >> n;
 
     int arr[100];
+
     int even = 0, odd = 0;
 
     for (int i = 0; i < n; i++) {
@@ -17,8 +18,8 @@ int main() {
             odd++;
     }
 
-    cout << "Even = " << even << endl;
-    cout << "Odd = " << odd;
+    cout << "Even Numbers: " << even << endl;
+    cout << "Odd Numbers: " << odd;
 
     return 0;
 }
